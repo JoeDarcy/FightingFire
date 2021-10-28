@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] private GameObject cube = null;
+    [SerializeField] private GameObject cubePrefab = null;
 
     public int levelSizeX, levelSizeY, levelSizeZ = 0;
+    private int currentObjectNum = 0;
 
     private const int maxObjects = 500;
-
-    private int currentObjectNum = 0;
 
     SpawnedObjects spawnedObjects;
     private struct SpawnedObjects
@@ -23,6 +22,8 @@ public class LevelLoader : MonoBehaviour
     void Start()
     {
         spawnedObjects.gameObject = new GameObject[maxObjects];
+        spawnedObjects.location = new Vector3[maxObjects];
+
         currentObjectNum = 0;
 
         for (int x = 0; x < levelSizeX; ++x)
@@ -36,9 +37,9 @@ public class LevelLoader : MonoBehaviour
                         y == levelSizeY - 1  || y == 0)
                     {
                         Vector3 newPos = new Vector3(x + 0.5f, y + 0.5f, z + 0.5f);
-                        spawnedObjects.gameObject[currentObjectNum] = Instantiate(cube, newPos, Quaternion.identity);
+                        spawnedObjects.gameObject[currentObjectNum] = Instantiate(cubePrefab, newPos, Quaternion.identity);
+                        spawnedObjects.location[currentObjectNum] = newPos;
                         currentObjectNum++;
-
                     }
                 }
             }

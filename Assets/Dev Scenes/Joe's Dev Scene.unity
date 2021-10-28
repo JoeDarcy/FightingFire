@@ -342,7 +342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a66bd181388ba45ad841a342108b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 7303148535491080444, guid: 4c1343d79e28d01499eb622218760e65, type: 3}
+  cubePrefab: {fileID: 7303148535491080444, guid: 4c1343d79e28d01499eb622218760e65,
+    type: 3}
   levelSizeX: 10
   levelSizeY: 5
   levelSizeZ: 10
