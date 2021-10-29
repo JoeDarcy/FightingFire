@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LevelLoader : MonoBehaviour
 {
+    //temp
+    [SerializeField] private bool scriptEnabled = false;
     [SerializeField] private GameObject cubePrefab = null;
 
     public int levelSizeX, levelSizeY, levelSizeZ = 0;
@@ -21,25 +23,28 @@ public class LevelLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnedObjects.gameObject = new GameObject[maxObjects];
-        spawnedObjects.location = new Vector3[maxObjects];
-
-        currentObjectNum = 0;
-
-        for (int x = 0; x < levelSizeX; ++x)
+        if (scriptEnabled)
         {
-            for (int y = 0; y < levelSizeY; ++y)
+            spawnedObjects.gameObject = new GameObject[maxObjects];
+            spawnedObjects.location = new Vector3[maxObjects];
+
+            currentObjectNum = 0;
+
+            for (int x = 0; x < levelSizeX; ++x)
             {
-                for (int z = 0; z < levelSizeZ; ++z)
+                for (int y = 0; y < levelSizeY; ++y)
                 {
-                    if (x == levelSizeX - 1  || x == 0 ||
-                        z == levelSizeZ - 1  || z == 0 ||
-                        y == levelSizeY - 1  || y == 0)
+                    for (int z = 0; z < levelSizeZ; ++z)
                     {
-                        Vector3 newPos = new Vector3(x + 0.5f, y + 0.5f, z + 0.5f);
-                        spawnedObjects.gameObject[currentObjectNum] = Instantiate(cubePrefab, newPos, Quaternion.identity);
-                        spawnedObjects.location[currentObjectNum] = newPos;
-                        currentObjectNum++;
+                        if (x == levelSizeX - 1 || x == 0 ||
+                            z == levelSizeZ - 1 || z == 0 ||
+                            y == levelSizeY - 1 || y == 0)
+                        {
+                            Vector3 newPos = new Vector3(x + 0.5f, y + 0.5f, z + 0.5f);
+                            spawnedObjects.gameObject[currentObjectNum] = Instantiate(cubePrefab, newPos, Quaternion.identity);
+                            spawnedObjects.location[currentObjectNum] = newPos;
+                            currentObjectNum++;
+                        }
                     }
                 }
             }
