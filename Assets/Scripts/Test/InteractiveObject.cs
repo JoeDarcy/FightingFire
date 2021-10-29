@@ -12,9 +12,10 @@ public class InteractiveObject : MonoBehaviour
     [SerializeField] public bool canFireSpread = false; //sometime later, change to false and change the texture to a burnt variation
     private bool isSpreading = false;
     private bool burntOut = false;
-    private SphereCollider normalSpreadColliderHorizontal = null;
-    private SphereCollider normalSpreadColliderVertical = null;
-    private SphereCollider closeSpreadCollider = null;
+    private CapsuleCollider normalSpreadColliderHorizontalX = null;
+    private CapsuleCollider normalSpreadColliderHorizontalZ = null;
+    private CapsuleCollider normalSpreadColliderVertical = null;
+    private CapsuleCollider closeSpreadCollider = null;
 
     //normal fire spreading properties
     [SerializeField] private float spreadRangeHorizontal = 5.0f;
@@ -36,12 +37,25 @@ public class InteractiveObject : MonoBehaviour
         if (flammable)
         {
             gameObject.tag = "Flammable";
-            normalSpreadColliderHorizontal = gameObject.AddComponent<SphereCollider>();
-            normalSpreadColliderHorizontal.radius = spreadRangeHorizontal;
-            normalSpreadColliderVertical = gameObject.AddComponent<SphereCollider>();
-            normalSpreadColliderVertical.radius = spreadRangeVertical;
-            closeSpreadCollider = gameObject.AddComponent<SphereCollider>();
+
+            normalSpreadColliderHorizontalX = gameObject.AddComponent<CapsuleCollider>();
+            normalSpreadColliderHorizontalX.radius = gameObject.transform.localScale.x * 1.5f; ;
+            normalSpreadColliderHorizontalX.height = spreadRangeHorizontal * normalSpreadColliderHorizontalX.radius * 2;
+            normalSpreadColliderHorizontalX.direction = 0;
+
+            normalSpreadColliderHorizontalZ = gameObject.AddComponent<CapsuleCollider>();
+            normalSpreadColliderHorizontalZ.radius = gameObject.transform.localScale.z * 1.5f;
+            normalSpreadColliderHorizontalZ.height = spreadRangeHorizontal * normalSpreadColliderHorizontalZ.radius * 2;
+            normalSpreadColliderHorizontalZ.direction = 2;
+
+            normalSpreadColliderVertical = gameObject.AddComponent<CapsuleCollider>();
+            normalSpreadColliderVertical.radius = gameObject.transform.localScale.y * 1.5f;
+            normalSpreadColliderVertical.height = spreadRangeVertical * normalSpreadColliderVertical.radius * 2;
+            normalSpreadColliderVertical.direction = 1;
+
+            closeSpreadCollider = gameObject.AddComponent<CapsuleCollider>();
             closeSpreadCollider.radius = closeSpreadRange;
+
         }
     }
 

@@ -314,8 +314,8 @@ MonoBehaviour:
   canFireSpread: 1
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
-  spreadRangeVertical: 1
-  timeToSpreadVertical: 3
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 2
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
@@ -348,8 +348,8 @@ MonoBehaviour:
   canFireSpread: 1
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
-  spreadRangeVertical: 1
-  timeToSpreadVertical: 3
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 2
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
@@ -382,8 +382,8 @@ MonoBehaviour:
   canFireSpread: 1
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
-  spreadRangeVertical: 1
-  timeToSpreadVertical: 3
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 2
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
@@ -669,8 +669,8 @@ MonoBehaviour:
   canFireSpread: 1
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
-  spreadRangeVertical: 1
-  timeToSpreadVertical: 3
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 2
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
@@ -703,8 +703,8 @@ MonoBehaviour:
   canFireSpread: 1
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
-  spreadRangeVertical: 1
-  timeToSpreadVertical: 3
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 2
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
@@ -1165,8 +1165,8 @@ MonoBehaviour:
   canFireSpread: 1
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
-  spreadRangeVertical: 1
-  timeToSpreadVertical: 3
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 2
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
@@ -1268,8 +1268,8 @@ MonoBehaviour:
   canFireSpread: 1
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
-  spreadRangeVertical: 1
-  timeToSpreadVertical: 3
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 2
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
@@ -1302,8 +1302,8 @@ MonoBehaviour:
   canFireSpread: 1
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
-  spreadRangeVertical: 1
-  timeToSpreadVertical: 3
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 2
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
