@@ -311,7 +311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
   flammable: 1
-  canFireSpread: 1
+  canSpeadFire: 0
+  isBurning: 0
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
   spreadRangeVertical: 1.5
@@ -319,6 +320,22 @@ MonoBehaviour:
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
+--- !u!54 &266184037
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266184031}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &272205336 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7303148535491080444, guid: 4c1343d79e28d01499eb622218760e65,
@@ -345,7 +362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
   flammable: 1
-  canFireSpread: 1
+  canSpeadFire: 0
+  isBurning: 0
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
   spreadRangeVertical: 1.5
@@ -353,6 +371,22 @@ MonoBehaviour:
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
+--- !u!54 &272205342
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272205336}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &571628716 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7303148535491080444, guid: 4c1343d79e28d01499eb622218760e65,
@@ -379,7 +413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
   flammable: 1
-  canFireSpread: 1
+  canSpeadFire: 0
+  isBurning: 0
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
   spreadRangeVertical: 1.5
@@ -387,6 +422,22 @@ MonoBehaviour:
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
+--- !u!54 &571628722
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571628716}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &596054309
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +717,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
   flammable: 1
-  canFireSpread: 1
+  canSpeadFire: 0
+  isBurning: 0
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
   spreadRangeVertical: 1.5
@@ -674,6 +726,22 @@ MonoBehaviour:
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
+--- !u!54 &781962608
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781962602}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &796696362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7303148535491080444, guid: 4c1343d79e28d01499eb622218760e65,
@@ -700,7 +768,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
   flammable: 1
-  canFireSpread: 1
+  canSpeadFire: 0
+  isBurning: 0
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
   spreadRangeVertical: 1.5
@@ -708,6 +777,22 @@ MonoBehaviour:
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
+--- !u!54 &796696368
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796696362}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &823952919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1162,7 +1247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
   flammable: 1
-  canFireSpread: 1
+  canSpeadFire: 0
+  isBurning: 0
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
   spreadRangeVertical: 1.5
@@ -1170,6 +1256,22 @@ MonoBehaviour:
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
+--- !u!54 &1548932556
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548932550}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1624813594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1265,7 +1367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
   flammable: 1
-  canFireSpread: 1
+  canSpeadFire: 0
+  isBurning: 0
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
   spreadRangeVertical: 1.5
@@ -1273,6 +1376,22 @@ MonoBehaviour:
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
+--- !u!54 &1642472964
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642472958}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2037092250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7303148535491080444, guid: 4c1343d79e28d01499eb622218760e65,
@@ -1299,7 +1418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
   flammable: 1
-  canFireSpread: 1
+  canSpeadFire: 0
+  isBurning: 0
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 3
   spreadRangeVertical: 1.5
@@ -1307,3 +1427,19 @@ MonoBehaviour:
   closeSpreading: 1
   closeSpreadRange: 1
   timeToCloseSpread: 0.5
+--- !u!54 &2037092256
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037092250}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
