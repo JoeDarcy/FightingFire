@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3957389355271738721}
   - component: {fileID: 4605975547966271270}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Fire_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
