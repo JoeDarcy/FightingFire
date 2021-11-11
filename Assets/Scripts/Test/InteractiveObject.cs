@@ -20,6 +20,7 @@ public class InteractiveObject : MonoBehaviour
     private CapsuleCollider normalSpreadColliderHorizontalZ = null;
     private CapsuleCollider normalSpreadColliderVertical = null;
     private CapsuleCollider closeSpreadCollider = null;
+    private Rigidbody rigidbody = null;
 
     //normal fire spreading properties
     [SerializeField] private float spreadRangeHorizontal = 2.0f;
@@ -65,6 +66,13 @@ public class InteractiveObject : MonoBehaviour
             closeSpreadCollider.isTrigger = true;
             closeSpreadCollider.radius = closeSpreadRange;
 
+            if (gameObject.GetComponent<Rigidbody>() == null)
+            {
+	            rigidbody = gameObject.AddComponent<Rigidbody>();
+	            rigidbody.angularDrag = 0.0f;
+                rigidbody.useGravity = false;
+                rigidbody.isKinematic = true;
+            }
         }
     }
 
@@ -105,7 +113,7 @@ public class InteractiveObject : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //**************************************************************************************************************
-        if (other is BoxCollider) //will have to do lots of different checks for if its the close
+        if (other.CompareTag(flammableTag)) //will have to do lots of different checks for if its the close
                                   // collider (sphere), etc as currently close, horizontal
                                   // and vertical colliders will start the close spread collider
         //**************************************************************************************************************

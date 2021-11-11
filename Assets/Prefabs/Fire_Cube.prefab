@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2768556457281875084}
   - component: {fileID: 3957389355271738721}
   - component: {fileID: 4605975547966271270}
+  - component: {fileID: 1443255676399963953}
   m_Layer: 0
   m_Name: Fire_Cube
   m_TagString: Untagged
@@ -96,3 +97,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1443255676399963953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7303148535491080444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56613d32f634ea49a08fb0638dce088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
+  flammable: 1
+  canSpeadFire: 0
+  isBurning: 0
+  spreadRangeHorizontal: 2
+  timeToSpreadHorizontal: 3
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 2
+  closeSpreading: 1
+  closeSpreadRange: 1
+  timeToCloseSpread: 0.5
