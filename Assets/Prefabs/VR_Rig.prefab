@@ -193,7 +193,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 8310566209211268326, guid: d20697c582ba7984ca380c118cb3c109,
+  m_ModelPrefab: {fileID: 5192011409604190037, guid: 3a0b41e2ae575c4408bec360c06563ff,
     type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
@@ -266,7 +266,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
