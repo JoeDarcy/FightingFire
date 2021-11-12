@@ -5,19 +5,16 @@ using UnityEngine.XR;
 
 public class HandPresence : MonoBehaviour
 {
-	[SerializeField] private GameObject normalFlat = null;
-	[SerializeField] private GameObject xrayFlat = null;
-
+	
+	public List<GameObject> controllerPrefabs;
 	private InputDevice targetDevice;
+	private GameObject spawnerController;
 
-	private bool xrayVision = false;
+	
 
     // Start is called before the first frame update
     void Start()
     {
-	    normalFlat.SetActive(true);
-		xrayFlat.SetActive(false);
-
 	    List<InputDevice> devices = new List<InputDevice>();
         InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
         InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
@@ -30,6 +27,16 @@ public class HandPresence : MonoBehaviour
         if (devices.Count > 0)
         { 
 	        targetDevice = devices[0];
+			GameObject prefab = controllerPrefabs.Find(controller => controller.name == targetDevice.name);
+			if (prefab)
+			{
+				spawnerController = Instantiate(prefab, transform);
+			}
+			else
+			{
+				Debug.LogError("Did not find corresponding controller model");
+				spawnerController = Instantiate(controllerPrefabs[0], transform);
+			}
         }
        
     }
@@ -37,27 +44,16 @@ public class HandPresence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    if (xrayVision == true)
-	    {
-		    normalFlat.SetActive(false);
-		    xrayFlat.SetActive(true);
-		}
-	    else
-	    {
-		    normalFlat.SetActive(true);
-		    xrayFlat.SetActive(false);
-		}
-
-		// Primary button
+	    // Primary button
 		if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue == true)
 	    {
 
 		    Debug.Log("Pressing primary button");
-			xrayVision = true;
+			XrayVision.xrayVision = true;
 	    }
 		else
 		{
-			xrayVision = false;
+			XrayVision.xrayVision = false;
 		}
 
 		// Trigger

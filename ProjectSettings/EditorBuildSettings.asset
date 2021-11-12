@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/01_Ed_Probuilder_Test.unity
     guid: be477809bf3befd459e66ac2ee80c05d
+  - enabled: 0
+    path: Assets/Dev Scenes/Joe's Dev Scene.unity
+    guid: e2892d6eeec80944981774a297028a08
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
