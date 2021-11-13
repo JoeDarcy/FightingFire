@@ -18,8 +18,13 @@ public class HandPresence : MonoBehaviour
 
 	private bool deviceActive = false;
 
+	private void Start()
+	{
+		CreateDeviceList();
+	}
+
 	// Update is called once per frame
-    void Update()
+	void Update()
     {
 		// Create a list of connected devices
 	    if (deviceActive == false)
