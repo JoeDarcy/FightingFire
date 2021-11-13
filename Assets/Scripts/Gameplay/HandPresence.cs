@@ -12,8 +12,9 @@ public class HandPresence : MonoBehaviour
 	public GameObject handModelPrefab;
 
 	private InputDevice targetDevice;
-	private GameObject spawnerController;
-	private GameObject spawnHandModel;
+	private GameObject spawnedController;
+	private GameObject spawnedHandModel;
+	private Animator handAnimator;
 
 	private bool deviceActive = false;
 
@@ -29,25 +30,42 @@ public class HandPresence : MonoBehaviour
 		// Show either the controller or the hand models
 		if (showController == true)
 		{
-			spawnHandModel.SetActive(false);
-			spawnerController.SetActive(true);
+			// Show controller
+			spawnedHandModel.SetActive(false);
+			spawnedController.SetActive(true);
 		}
 		else
 		{
-			spawnHandModel.SetActive(true);
-			spawnerController.SetActive(false);
+			// Show hands
+			spawnedHandModel.SetActive(true);
+			spawnedController.SetActive(false);
+
+			// Update hands animation
+			UpdateHandAnimation();
 		}
 
 	    // Primary button Left Hand (X Button)
 		if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue == true && gameObject.CompareTag("Left_Hand"))
 	    {
 
-		    Debug.Log("Pressing primary button");
-			XrayVision.xrayVision = true;
+		    Debug.Log("Pressing primary button X");
+		    XrayVision.xrayVision = true;
+			
 	    }
 		else
 		{
 			XrayVision.xrayVision = false;
+		}
+
+		// Secpondary Left Hand (Y button)
+		if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue == true && gameObject.CompareTag("Left_Hand")) {
+
+			Debug.Log("Pressing secondary button Y");
+			showController = true;
+
+		} else 
+		{
+			showController = false;
 		}
 
 		// Trigger
@@ -61,6 +79,28 @@ public class HandPresence : MonoBehaviour
 	    }
     }
 
+	// Update hand animation based on buttons pressed
+	void UpdateHandAnimation()
+	{
+		// If trigger is pressed update the trigger animatior float to set pinch animation
+		if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
+		{
+			handAnimator.SetFloat("Trigger", triggerValue);
+		}
+		else
+		{
+			handAnimator.SetFloat("Trigger", 0);
+		}
+
+		// If grip is pressed update the grip animatior float to set fist animation
+		if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue)) 
+		{
+			handAnimator.SetFloat("Grip", gripValue);
+		} else 
+		{
+			handAnimator.SetFloat("Grip", 0);
+		}
+	}
 
     private void CreateDeviceList()
     {
@@ -76,14 +116,15 @@ public class HandPresence : MonoBehaviour
 		    targetDevice = devices[0];
 		    GameObject prefab = controllerPrefabs.Find(controller => controller.name == targetDevice.name);
 		    if (prefab) {
-			    spawnerController = Instantiate(prefab, transform);
+			    spawnedController = Instantiate(prefab, transform);
 				deviceActive = true;
 		    } else {
 			    Debug.LogError("Did not find corresponding controller model");
-			    spawnerController = Instantiate(controllerPrefabs[0], transform);
+			    spawnedController = Instantiate(controllerPrefabs[0], transform);
 		    }
 	    }
 
-	    spawnHandModel = Instantiate(handModelPrefab, transform);
+	    spawnedHandModel = Instantiate(handModelPrefab, transform);
+		handAnimator = spawnedHandModel.GetComponent<Animator>();
     }
 }
