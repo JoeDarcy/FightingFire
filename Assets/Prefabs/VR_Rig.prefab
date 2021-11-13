@@ -9946,6 +9946,9 @@ GameObject:
   - component: {fileID: 4474019518356663455}
   - component: {fileID: 1812437502131259678}
   - component: {fileID: 3272732481642551793}
+  - component: {fileID: 4656986654770292803}
+  - component: {fileID: 3165502871166200584}
+  - component: {fileID: 1728246707104744148}
   m_Layer: 0
   m_Name: VR_Rig
   m_TagString: Untagged
@@ -10030,6 +10033,64 @@ MonoBehaviour:
   leftTeleportRay: {fileID: 8228993190408278645}
   teleportActivationButton: 2
   activationThreshold: 0.1
+--- !u!114 &4656986654770292803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736828165606991630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf73cff43b14594b80ed4f65dada4d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  inputSource: 4
+  gravity: -9.81
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  additionHeight: 0.2
+--- !u!143 &3165502871166200584
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736828165606991630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.15
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1728246707104744148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736828165606991630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4f2c0214c9b494fa7eb5b8b2c02885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 0}
+  m_TurnAmount: 45
+  m_DebounceTime: 0.2
+  m_EnableTurnLeftRight: 1
+  m_EnableTurnAround: 1
+  m_TurnUsage: 0
+  m_Controllers:
+  - {fileID: 0}
+  m_DeadZone: 0.75
 --- !u!1 &3736828165699301598
 GameObject:
   m_ObjectHideFlags: 0
@@ -11234,12 +11295,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1152763772922690416, guid: ed12e861f810f584ab60a543178ab41d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed12e861f810f584ab60a543178ab41d, type: 3}
---- !u!1 &6214362492522417696 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1785378259148566202, guid: ed12e861f810f584ab60a543178ab41d,
-    type: 3}
-  m_PrefabInstance: {fileID: 5691188536939520154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3020914849682183810 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7428507123002930712, guid: ed12e861f810f584ab60a543178ab41d,
@@ -11255,6 +11310,12 @@ MonoBehaviour:
 --- !u!4 &7644303186028161642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2660832351811422960, guid: ed12e861f810f584ab60a543178ab41d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5691188536939520154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6214362492522417696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1785378259148566202, guid: ed12e861f810f584ab60a543178ab41d,
     type: 3}
   m_PrefabInstance: {fileID: 5691188536939520154}
   m_PrefabAsset: {fileID: 0}
