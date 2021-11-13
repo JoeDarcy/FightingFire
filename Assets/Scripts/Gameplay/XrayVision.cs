@@ -19,6 +19,8 @@ public class XrayVision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+	    Debug.Log("XrayVision vision: " + xrayVision);
+
 		if (xrayVision == true) {
 			normalFlat.SetActive(false);
 			xrayFlat.SetActive(true);

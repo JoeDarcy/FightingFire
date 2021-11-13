@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Flammable
+  - Right_Hand
+  - Left_Hand
   layers:
   - Default
   - TransparentFX

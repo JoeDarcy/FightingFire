@@ -5,47 +5,41 @@ using UnityEngine.XR;
 
 public class HandPresence : MonoBehaviour
 {
-	
+	public bool showController = false;
+	public InputDeviceCharacteristics controllerCharacteristics;	
 	public List<GameObject> controllerPrefabs;
+
+	public GameObject handModelPrefab;
+
 	private InputDevice targetDevice;
 	private GameObject spawnerController;
+	private GameObject spawnHandModel;
 
-	
+	private bool deviceActive = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-	    List<InputDevice> devices = new List<InputDevice>();
-        InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
-
-        foreach (var item in devices)
-        {
-	        Debug.Log(item.name + item.characteristics);
-        }
-
-        if (devices.Count > 0)
-        { 
-	        targetDevice = devices[0];
-			GameObject prefab = controllerPrefabs.Find(controller => controller.name == targetDevice.name);
-			if (prefab)
-			{
-				spawnerController = Instantiate(prefab, transform);
-			}
-			else
-			{
-				Debug.LogError("Did not find corresponding controller model");
-				spawnerController = Instantiate(controllerPrefabs[0], transform);
-			}
-        }
-       
-    }
-
-    // Update is called once per frame
+	// Update is called once per frame
     void Update()
     {
-	    // Primary button
-		if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue == true)
+		// Create a list of connected devices
+	    if (deviceActive == false)
+	    {
+			CreateDeviceList();
+	    }
+
+		// Show either the controller or the hand models
+		if (showController == true)
+		{
+			spawnHandModel.SetActive(false);
+			spawnerController.SetActive(true);
+		}
+		else
+		{
+			spawnHandModel.SetActive(true);
+			spawnerController.SetActive(false);
+		}
+
+	    // Primary button Left Hand (X Button)
+		if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue == true && gameObject.CompareTag("Left_Hand"))
 	    {
 
 		    Debug.Log("Pressing primary button");
@@ -65,5 +59,31 @@ public class HandPresence : MonoBehaviour
 		if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue !=  Vector2.zero) {
 		    Debug.Log("Using joystick : " + primary2DAxisValue);
 	    }
+    }
+
+
+    private void CreateDeviceList()
+    {
+	    List<InputDevice> devices = new List<InputDevice>();
+
+	    InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
+
+	    foreach (var item in devices) {
+		    Debug.Log(item.name + item.characteristics);
+	    }
+
+	    if (devices.Count > 0) {
+		    targetDevice = devices[0];
+		    GameObject prefab = controllerPrefabs.Find(controller => controller.name == targetDevice.name);
+		    if (prefab) {
+			    spawnerController = Instantiate(prefab, transform);
+				deviceActive = true;
+		    } else {
+			    Debug.LogError("Did not find corresponding controller model");
+			    spawnerController = Instantiate(controllerPrefabs[0], transform);
+		    }
+	    }
+
+	    spawnHandModel = Instantiate(handModelPrefab, transform);
     }
 }
