@@ -57,7 +57,7 @@ public class HandPresence : MonoBehaviour
 		    XrayVision.xrayVision = true;
 			
 	    }
-		else
+		else if (primaryButtonValue == false && gameObject.CompareTag("Left_Hand"))
 		{
 			XrayVision.xrayVision = false;
 		}

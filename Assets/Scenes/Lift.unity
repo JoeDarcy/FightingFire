@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 946517583}
   - component: {fileID: 946517582}
   - component: {fileID: 946517581}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Teleportation Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1405425117}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1023,7 @@ GameObject:
   - component: {fileID: 1498723329}
   - component: {fileID: 1498723328}
   - component: {fileID: 1498723327}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
