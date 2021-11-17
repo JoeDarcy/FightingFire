@@ -96,7 +96,7 @@ public class InteractiveObject : MonoBehaviour
                         if (!obj.GetComponent<InteractiveObject>().isBurning)
                         {
                             obj.GetComponent<InteractiveObject>().isBurning = true;
-                            obj.GetComponent<InteractiveObject>().canSpeadFire = true;
+                            //obj.GetComponent<InteractiveObject>().canSpeadFire = true;
                         }
                     }
                 }

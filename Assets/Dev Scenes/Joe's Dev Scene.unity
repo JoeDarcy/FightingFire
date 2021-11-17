@@ -300,6 +300,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
       propertyPath: timeToCloseSpread
       value: 2
       objectReference: {fileID: 0}
@@ -1665,6 +1670,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
       propertyPath: timeToCloseSpread
       value: 2
       objectReference: {fileID: 0}
@@ -1898,6 +1908,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 596054310}
     m_Modifications:
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
       propertyPath: timeToCloseSpread
@@ -2183,6 +2198,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
       propertyPath: timeToCloseSpread
       value: 2
       objectReference: {fileID: 0}
@@ -2408,6 +2428,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 596054310}
     m_Modifications:
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
       propertyPath: timeToCloseSpread
@@ -2755,6 +2780,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 596054310}
     m_Modifications:
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: isBurning
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
       propertyPath: timeToCloseSpread
@@ -3555,6 +3590,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
       propertyPath: timeToCloseSpread
       value: 2
       objectReference: {fileID: 0}
@@ -3688,6 +3728,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 596054310}
     m_Modifications:
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
       propertyPath: timeToCloseSpread
