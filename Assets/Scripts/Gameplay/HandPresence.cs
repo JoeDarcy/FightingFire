@@ -65,7 +65,7 @@ public class HandPresence : MonoBehaviour
 		// Secpondary Left Hand (Y button)
 		if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue == true && gameObject.CompareTag("Left_Hand")) {
 
-			Debug.Log("Pressing secondary button Y");
+			//Debug.Log("Pressing secondary button Y");
 			showController = true;
 
 		} else 
@@ -75,12 +75,12 @@ public class HandPresence : MonoBehaviour
 
 		// Trigger
 		if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue) && triggerValue > 0.1f) {
-		    Debug.Log("Pressing trigger : " + triggerValue);
+		    //Debug.Log("Pressing trigger : " + triggerValue);
 	    }
 
 		// Joystick
 		if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue !=  Vector2.zero) {
-		    Debug.Log("Using joystick : " + primary2DAxisValue);
+		    //Debug.Log("Using joystick : " + primary2DAxisValue);
 	    }
     }
 
