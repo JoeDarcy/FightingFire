@@ -61,5 +61,7 @@ MonoBehaviour:
   smokePuff: {fileID: 5287471714799610627, guid: 9ba8a7f2613c784409b379b9cac6fe8e,
     type: 3}
   fireInstance: {fileID: 0}
+  fireSFX_01: {fileID: 5302070063788807168, guid: a8b0517c17b2c3c47a1907c44a1e0d4a,
+    type: 3}
   burnt: {fileID: 2100000, guid: 7595de232385ee444bac38d8cd85f106, type: 2}
   health: 10

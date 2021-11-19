@@ -57,7 +57,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7952fd2b774ad184f84ee27c9b42218d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
+  parent: {fileID: 0}
+  smokePuff: {fileID: 0}
+  fireInstance: {fileID: 0}
+  fireSFX_01: {fileID: 0}
+  burnt: {fileID: 0}
+  health: 0
 --- !u!1 &7303148535491080444
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +174,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
+  fireSFX_01: {fileID: 5302070063788807168, guid: a8b0517c17b2c3c47a1907c44a1e0d4a,
+    type: 3}
+  fireSFX_02: {fileID: 2947651158333548991, guid: 2324ebc9683db3e45a579bd896a4ce36,
+    type: 3}
   flammable: 1
   canSpeadFire: 0
   isBurning: 0

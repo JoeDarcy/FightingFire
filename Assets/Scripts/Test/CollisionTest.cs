@@ -7,8 +7,10 @@ public class CollisionTest : MonoBehaviour
 	[SerializeField] private GameObject parent = null;
 	[SerializeField] private GameObject smokePuff = null;
 	[SerializeField] private GameObject fireInstance = null;
+	[SerializeField] private GameObject fireSFX_01 = null;
 	[SerializeField] private Material burnt = null;
 	[SerializeField] private int health = 0;
+	
 	private int hitCounter = 0;
 	private int hitsTemp = 0;
 

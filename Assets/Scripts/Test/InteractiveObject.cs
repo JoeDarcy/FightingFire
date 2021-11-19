@@ -6,6 +6,9 @@ public class InteractiveObject : MonoBehaviour
 {
     //fire prefab
     [SerializeField] private GameObject fire = null;
+    // Fire sound effects
+    [SerializeField] private GameObject fireSFX_01 = null;
+    [SerializeField] private GameObject fireSFX_02 = null;
 
     //object basic properties
     [SerializeField] public bool flammable = false;
@@ -107,6 +110,7 @@ public class InteractiveObject : MonoBehaviour
         {
             doOnce = false;
             GameObject fireInstance = Instantiate(fire, transform.position, Quaternion.identity);
+            Instantiate(fireSFX_01, transform.position, Quaternion.identity);
             fireInstance.transform.parent = gameObject.transform;
             //change material/texture to burnt texture
         }

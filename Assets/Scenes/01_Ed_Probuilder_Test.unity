@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4639,17 +4639,17 @@ PrefabInstance:
     - target: {fileID: 6673096262924341344, guid: 79ad98a36ac139f4da98a9f63a0a5dcd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.119
+      value: -1.966
       objectReference: {fileID: 0}
     - target: {fileID: 6673096262924341344, guid: 79ad98a36ac139f4da98a9f63a0a5dcd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.577
+      value: 1.239
       objectReference: {fileID: 0}
     - target: {fileID: 6673096262924341344, guid: 79ad98a36ac139f4da98a9f63a0a5dcd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.204
+      value: -7.907
       objectReference: {fileID: 0}
     - target: {fileID: 6673096262924341344, guid: 79ad98a36ac139f4da98a9f63a0a5dcd,
         type: 3}
@@ -12880,6 +12880,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
+  fireSFX_01: {fileID: 0}
+  fireSFX_02: {fileID: 0}
   flammable: 1
   canSpeadFire: 0
   isBurning: 0
@@ -21334,6 +21336,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
+  fireSFX_01: {fileID: 5302070063788807168, guid: a8b0517c17b2c3c47a1907c44a1e0d4a,
+    type: 3}
+  fireSFX_02: {fileID: 2947651158333548991, guid: 2324ebc9683db3e45a579bd896a4ce36,
+    type: 3}
   flammable: 1
   canSpeadFire: 0
   isBurning: 1
@@ -21474,6 +21480,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5028811654648104491, guid: cce4a4c502f28b848846234fad5eb9d6,
+        type: 3}
+      propertyPath: fireSFX_01
+      value: 
+      objectReference: {fileID: 5302070063788807168, guid: a8b0517c17b2c3c47a1907c44a1e0d4a,
+        type: 3}
+    - target: {fileID: 5028811654648104491, guid: cce4a4c502f28b848846234fad5eb9d6,
+        type: 3}
+      propertyPath: fireSFX_02
+      value: 
+      objectReference: {fileID: 2947651158333548991, guid: 2324ebc9683db3e45a579bd896a4ce36,
+        type: 3}
     - target: {fileID: 5845773659781649773, guid: cce4a4c502f28b848846234fad5eb9d6,
         type: 3}
       propertyPath: parent
