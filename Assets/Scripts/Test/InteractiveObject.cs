@@ -96,7 +96,7 @@ public class InteractiveObject : MonoBehaviour
                         if (!obj.GetComponent<InteractiveObject>().isBurning)
                         {
                             obj.GetComponent<InteractiveObject>().isBurning = true;
-                            obj.GetComponent<InteractiveObject>().canSpeadFire = true;
+                            //obj.GetComponent<InteractiveObject>().canSpeadFire = true;
                         }
                     }
                 }
@@ -106,7 +106,9 @@ public class InteractiveObject : MonoBehaviour
         if (isBurning && doOnce)
         {
             doOnce = false;
-            Instantiate(fire, transform.position, Quaternion.identity);
+            GameObject fireInstance = Instantiate(fire, transform.position, Quaternion.identity);
+            fireInstance.transform.parent = gameObject.transform;
+            //change material/texture to burnt texture
         }
     }
 

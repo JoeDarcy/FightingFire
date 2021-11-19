@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -298,6 +298,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 596054310}
     m_Modifications:
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
       propertyPath: timeToCloseSpread
@@ -1665,6 +1670,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
       propertyPath: timeToCloseSpread
       value: 2
       objectReference: {fileID: 0}
@@ -1898,6 +1908,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 596054310}
     m_Modifications:
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
       propertyPath: timeToCloseSpread
@@ -2183,6 +2198,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
       propertyPath: timeToCloseSpread
       value: 2
       objectReference: {fileID: 0}
@@ -2408,6 +2428,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 596054310}
     m_Modifications:
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
       propertyPath: timeToCloseSpread
@@ -2755,6 +2780,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 596054310}
     m_Modifications:
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: isBurning
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
       propertyPath: timeToCloseSpread
@@ -3555,6 +3590,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
       propertyPath: timeToCloseSpread
       value: 2
       objectReference: {fileID: 0}
@@ -3690,6 +3730,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
         type: 3}
+      propertyPath: canSpeadFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443255676399963953, guid: 4c1343d79e28d01499eb622218760e65,
+        type: 3}
       propertyPath: timeToCloseSpread
       value: 2
       objectReference: {fileID: 0}
@@ -3809,7 +3854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639228488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0.5, z: 10}
+  m_LocalPosition: {x: 10, y: 0.071, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1329820076}
