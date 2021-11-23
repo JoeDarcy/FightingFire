@@ -24,7 +24,9 @@ public class CollisionTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    if (hitCounter >= health && (parent != null))
+	    if ((hitCounter >= health) &&
+			(parent != null) &&
+			(smokePuff != null))
 	    {
 			Vector3 smokeRotaion = new Vector3(-90.0f, 0.0f, 0.0f);
 			GameObject obj = Instantiate(smokePuff, transform.position, Quaternion.Euler(smokeRotaion));
