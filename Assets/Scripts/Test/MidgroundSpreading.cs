@@ -34,7 +34,7 @@ public class MidgroundSpreading : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -55,12 +55,20 @@ public class MidgroundSpreading : MonoBehaviour
         //material1, then material2
     }
 
-    public void UpdateFires(List<GameObject> _objNewFires)
+    public void UpdateFires(List<GameObject> _objFires) //called from 
     {
-        if (_objNewFires != objProcessedFires)
+        foreach (GameObject obj in _objFires)
         {
-            objNewFires = _objNewFires;
+            if (!objProcessedFires.Contains(obj))
+            {
+                objNewFires.Add(obj);
+            }
+        }
+
+        if (objNewFires.Count > 0)
+        {
             ProcessNewFires();
+            ApplyUpdatedTiles();
         }
     }
 
@@ -160,12 +168,24 @@ public class MidgroundSpreading : MonoBehaviour
                     }
                 }
             }
-
-
-
             objProcessedFires.Add(obj);
         }
         objNewFires.Clear();
+    }
+
+    public void ApplyUpdatedTiles()
+    {
+        foreach(Tile tile in tiles)
+        {
+            if (tile.spreadTime >= tile.spreadTotalTime && tile.gameObject.GetComponent<Renderer>().material != tile.material)
+            {
+                tile.gameObject.GetComponent<Renderer>().material = tile.material;
+            }
+            else if (tile.spreadTime < tile.spreadTotalTime)
+            {
+                tile.spreadTotalTime += Time.deltaTime;
+            }
+        }
     }
 }
 
@@ -173,7 +193,6 @@ public class Tile
 {
     public GameObject gameObject { get; set; }
     public Material material { get; set; }
-
     public float spreadTotalTime { get; set; }
     public float spreadTime { get; set; }
 }
