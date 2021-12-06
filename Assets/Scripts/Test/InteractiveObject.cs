@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour
 {
+    //fire manager
+    [SerializeField] private GameObject fireManager = null;
+
     //fire prefab
     [SerializeField] private GameObject fire = null;
     // Fire sound effects
@@ -78,8 +81,10 @@ public class InteractiveObject : MonoBehaviour
         {
             doOnce = false;
             GameObject fireInstance = Instantiate(fire, transform.position, Quaternion.identity);
+            fireInstance.AddComponent<BoxCollider>();
             Instantiate(fireSFX_01, transform.position, Quaternion.identity);
             fireInstance.transform.parent = gameObject.transform;
+            fireManager.GetComponent<FireManager>().AddFire(fireInstance);
             //change material/texture to burnt texture
         }
     }
