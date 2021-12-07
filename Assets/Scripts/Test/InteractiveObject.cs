@@ -27,14 +27,14 @@ public class InteractiveObject : MonoBehaviour
 
     //normal fire spreading properties
     [SerializeField] private float spreadRangeHorizontal = 2.0f;
-    [SerializeField] private float timeToSpreadHorizontal = 3.0f;
+    [SerializeField] private float timeToSpreadHorizontal = 8.0f;
     [SerializeField] private float spreadRangeVertical = 1.5f;
-    [SerializeField] private float timeToSpreadVertical = 2.0f;
+    [SerializeField] private float timeToSpreadVertical = 4.0f;
 
     //close fire spreading properties
     [SerializeField] private bool closeSpreading = false;
     [SerializeField] private float closeSpreadRange = 1.0f;
-    [SerializeField] private float timeToCloseSpread = 0.5f;
+    [SerializeField] private float timeToCloseSpread = 1.5f;
 
     private float timerHorizontal = 0.0f;
     private float timerVertical = 0.0f;
@@ -45,37 +45,7 @@ public class InteractiveObject : MonoBehaviour
     {
         if (flammable)
         {
-            gameObject.tag = flammableTag;
-
-            normalSpreadColliderHorizontalX = gameObject.AddComponent<CapsuleCollider>();
-            normalSpreadColliderHorizontalX.isTrigger = true;
-            normalSpreadColliderHorizontalX.radius = gameObject.transform.localScale.x * 1.5f; ;
-            normalSpreadColliderHorizontalX.height = spreadRangeHorizontal * normalSpreadColliderHorizontalX.radius * 2;
-            normalSpreadColliderHorizontalX.direction = 0; //0 is the X axis index
-
-            normalSpreadColliderHorizontalZ = gameObject.AddComponent<CapsuleCollider>();
-            normalSpreadColliderHorizontalZ.isTrigger = true;
-            normalSpreadColliderHorizontalZ.radius = gameObject.transform.localScale.z * 1.5f;
-            normalSpreadColliderHorizontalZ.height = spreadRangeHorizontal * normalSpreadColliderHorizontalZ.radius * 2;
-            normalSpreadColliderHorizontalZ.direction = 2; //2 is the Z axis index
-
-            normalSpreadColliderVertical = gameObject.AddComponent<CapsuleCollider>();
-            normalSpreadColliderVertical.isTrigger = true;
-            normalSpreadColliderVertical.radius = gameObject.transform.localScale.y * 1.5f;
-            normalSpreadColliderVertical.height = spreadRangeVertical * normalSpreadColliderVertical.radius * 2;
-            normalSpreadColliderVertical.direction = 1; //1 is the Y axis index
-
-            closeSpreadCollider = gameObject.AddComponent<CapsuleCollider>();
-            closeSpreadCollider.isTrigger = true;
-            closeSpreadCollider.radius = closeSpreadRange;
-
-            if (gameObject.GetComponent<Rigidbody>() == null)
-            {
-	            rigidbody = gameObject.AddComponent<Rigidbody>();
-	            rigidbody.angularDrag = 0.0f;
-                rigidbody.useGravity = false;
-                rigidbody.isKinematic = true;
-            }
+            SetupFlammableObject();
         }
     }
 
@@ -89,7 +59,7 @@ public class InteractiveObject : MonoBehaviour
             timerHorizontal += Time.deltaTime;
             timerVertical += Time.deltaTime;
             timerClose += Time.deltaTime;
-            if (timerClose >= timeToCloseSpread * 2)
+            if (timerClose >= timeToCloseSpread)
             {
                 timerClose = 0.0f;
                 if (abc.Count > 0)
@@ -113,6 +83,41 @@ public class InteractiveObject : MonoBehaviour
             Instantiate(fireSFX_01, transform.position, Quaternion.identity);
             fireInstance.transform.parent = gameObject.transform;
             //change material/texture to burnt texture
+        }
+    }
+
+    void SetupFlammableObject()
+    {
+        gameObject.tag = flammableTag;
+
+        normalSpreadColliderHorizontalX = gameObject.AddComponent<CapsuleCollider>();
+        normalSpreadColliderHorizontalX.isTrigger = true;
+        normalSpreadColliderHorizontalX.radius = gameObject.transform.localScale.x * 1.5f; ;
+        normalSpreadColliderHorizontalX.height = spreadRangeHorizontal * normalSpreadColliderHorizontalX.radius * 2;
+        normalSpreadColliderHorizontalX.direction = 0; //0 is the X axis index
+
+        normalSpreadColliderHorizontalZ = gameObject.AddComponent<CapsuleCollider>();
+        normalSpreadColliderHorizontalZ.isTrigger = true;
+        normalSpreadColliderHorizontalZ.radius = gameObject.transform.localScale.z * 1.5f;
+        normalSpreadColliderHorizontalZ.height = spreadRangeHorizontal * normalSpreadColliderHorizontalZ.radius * 2;
+        normalSpreadColliderHorizontalZ.direction = 2; //2 is the Z axis index
+
+        normalSpreadColliderVertical = gameObject.AddComponent<CapsuleCollider>();
+        normalSpreadColliderVertical.isTrigger = true;
+        normalSpreadColliderVertical.radius = gameObject.transform.localScale.y * 1.5f;
+        normalSpreadColliderVertical.height = spreadRangeVertical * normalSpreadColliderVertical.radius * 2;
+        normalSpreadColliderVertical.direction = 1; //1 is the Y axis index
+
+        closeSpreadCollider = gameObject.AddComponent<CapsuleCollider>();
+        closeSpreadCollider.isTrigger = true;
+        closeSpreadCollider.radius = closeSpreadRange;
+
+        if (gameObject.GetComponent<Rigidbody>() == null)
+        {
+            rigidbody = gameObject.AddComponent<Rigidbody>();
+            rigidbody.angularDrag = 0.0f;
+            rigidbody.useGravity = false;
+            rigidbody.isKinematic = true;
         }
     }
 
