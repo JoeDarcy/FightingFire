@@ -11,7 +11,7 @@ public class CollisionTest : MonoBehaviour
 	[SerializeField] private Material burnt = null;
 	[SerializeField] private int health = 0;
 	
-	private int hitCounter = 0;
+	public int hitCounter = 0;
 	private int hitsTemp = 0;
 
 	private List<ParticleSystem> abc = null;
@@ -39,6 +39,7 @@ public class CollisionTest : MonoBehaviour
 			parent = null;
 	    }
 
+		/* No longer using particle system for fire
 		if (hitCounter <= health && (parent != null) && hitCounter != hitsTemp)
         {
 			hitsTemp = hitCounter;
@@ -55,6 +56,11 @@ public class CollisionTest : MonoBehaviour
 			fireInstance = null;
 			ps = null;
 		}
+		*/
+
+		// Reduce the size of the fire effect with each hit taken
+		
+
 	}
 
 	private void OnTriggerEnter(Collider other)

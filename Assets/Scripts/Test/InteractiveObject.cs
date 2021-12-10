@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class InteractiveObject : MonoBehaviour
 {
     //fire prefab
     [SerializeField] private GameObject fire = null;
+    private GameObject fireInstance = null;
+    VisualEffect fireVFX = null;
+    // Temporary hits taken variable
+    private int hitTemp = 0;
+    // Maximum hits the fire can take
+    private int hitMax = 10;
     // Fire sound effects
     [SerializeField] private GameObject fireSFX_01 = null;
     [SerializeField] private GameObject fireSFX_02 = null;
@@ -79,10 +86,44 @@ public class InteractiveObject : MonoBehaviour
         if (isBurning && doOnce)
         {
             doOnce = false;
-            GameObject fireInstance = Instantiate(fire, transform.position, Quaternion.identity);
-            Instantiate(fireSFX_01, transform.position, Quaternion.identity);
+            fireInstance = Instantiate(fire, transform.position, Quaternion.identity);
+
+            // Instantiate Fire sound effect
+            if (fireSFX_01 != null)
+            {
+	            Instantiate(fireSFX_01, transform.position, Quaternion.identity);
+            }
+            
             fireInstance.transform.parent = gameObject.transform;
-            //change material/texture to burnt texture
+        }
+
+        // Control the size of fireInstance as it is hit by player
+        if (fireInstance != null)
+        {
+	        if (fireVFX == null)
+	        {
+		        // Set fire VFX
+		        fireVFX = fireInstance.GetComponentInChildren<VisualEffect>();
+	        }
+
+            // Check for an exposed attribute in the Visual Effect component
+	        //bool hasString = fireVFX.HasFloat("Flame_Size");
+
+            // Reduce size as damage is taken
+            if (GetComponentInChildren<CollisionTest>().hitCounter > hitTemp && GetComponentInChildren<CollisionTest>().hitCounter < hitMax)
+            {
+                // Set the size of the flames in the VFX graph
+	            fireVFX.SetFloat("Flame_Size", fireVFX.GetFloat("Flame_Size") - 0.2f);
+            }
+            // Store current hits taken to check against the updated value next time round
+            hitTemp = GetComponentInChildren<CollisionTest>().hitCounter;
+
+            // Destroy fire VFX when fire is dead (set size to 0)
+            if (GetComponentInChildren<CollisionTest>().hitCounter >= hitMax)
+            {
+	            // Set the size of the flames in the VFX graph
+	            fireVFX.SetFloat("Flame_Size", 0.0f);
+            }
         }
     }
 
