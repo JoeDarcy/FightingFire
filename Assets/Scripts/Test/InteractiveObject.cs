@@ -50,7 +50,7 @@ public class InteractiveObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (flammable)
+	    if (flammable)
         {
             SetupFlammableObject();
         }
@@ -123,6 +123,10 @@ public class InteractiveObject : MonoBehaviour
             {
 	            // Set the size of the flames in the VFX graph
 	            fireVFX.SetFloat("Flame_Size", 0.0f);
+	            // Set the size of the embers in the VFX graph
+	            fireVFX.SetFloat("Ember_Size", 0.0f);
+	            // Set the size of the smoke in the VFX graph
+	            fireVFX.SetFloat("Smoke_Size", 1.0f);
             }
         }
     }

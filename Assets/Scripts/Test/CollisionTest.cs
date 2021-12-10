@@ -6,6 +6,7 @@ public class CollisionTest : MonoBehaviour
 {
 	[SerializeField] private GameObject parent = null;
 	[SerializeField] private GameObject smokePuff = null;
+	private GameObject smokePuffInstance = null;
 	[SerializeField] private GameObject fireInstance = null;
 	[SerializeField] private GameObject fireSFX_01 = null;
 	[SerializeField] private Material burnt = null;
@@ -28,9 +29,13 @@ public class CollisionTest : MonoBehaviour
 			(parent != null) &&
 			(smokePuff != null))
 	    {
-			Vector3 smokeRotaion = new Vector3(-90.0f, 0.0f, 0.0f);
-			GameObject obj = Instantiate(smokePuff, transform.position, Quaternion.Euler(smokeRotaion));
-			//Destroy(parent); //change to instansiate puff of smoke, dont destroy
+		    if (smokePuffInstance == null)
+		    {
+			    Vector3 smokeRotation = new Vector3(-90.0f, 0.0f, 0.0f);
+			    smokePuffInstance = Instantiate(smokePuff, transform.position, Quaternion.Euler(smokeRotation));
+			}
+			
+			//Destroy(parent); //change to instantiate puff of smoke, don't destroy
 			//call function in interactiveObject to make it not on fire
 			//parent.GetComponent<InteractiveObject>().isBurning = false;
 			//parent.GetComponent<InteractiveObject>().burntOut = false;
