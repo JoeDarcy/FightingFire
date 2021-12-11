@@ -8,6 +8,8 @@ TagManager:
   - Right_Hand
   - Left_Hand
   - Axe
+  - Old_Woman
+  - Baby
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Sliceable
   - Grabbable
   - Ground
-  - 
+  - Body
   - 
   - 
   - 

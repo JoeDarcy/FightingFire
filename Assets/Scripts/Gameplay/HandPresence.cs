@@ -12,8 +12,8 @@ public class HandPresence : MonoBehaviour
 	public GameObject handModelPrefab;
 
 	private InputDevice targetDevice;
-	private GameObject spawnedController;
-	private GameObject spawnedHandModel;
+	private GameObject spawnedController = null;
+	private GameObject spawnedHandModel = null;
 	private Animator handAnimator;
 
 	private bool deviceActive = false;
@@ -36,14 +36,20 @@ public class HandPresence : MonoBehaviour
 		if (showController == true)
 		{
 			// Show controller
-			spawnedHandModel.SetActive(false);
-			spawnedController.SetActive(true);
+			if (spawnedController && spawnedHandModel != null)
+			{
+				spawnedHandModel.SetActive(false);
+				spawnedController.SetActive(true);
+			}
 		}
 		else
 		{
 			// Show hands
-			spawnedHandModel.SetActive(true);
-			spawnedController.SetActive(false);
+			if (spawnedController && spawnedHandModel != null)
+			{
+				spawnedHandModel.SetActive(true);
+				spawnedController.SetActive(false);
+			}
 
 			// Update hands animation
 			UpdateHandAnimation();
