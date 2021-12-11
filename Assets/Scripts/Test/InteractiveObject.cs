@@ -70,7 +70,6 @@ public class InteractiveObject : MonoBehaviour
                         if (!obj.GetComponent<InteractiveObject>().isBurning)
                         {
                             obj.GetComponent<InteractiveObject>().isBurning = true;
-                            //obj.GetComponent<InteractiveObject>().canSpeadFire = true;
                         }
                     }
                 }
@@ -132,6 +131,12 @@ public class InteractiveObject : MonoBehaviour
                                   // and vertical colliders will start the close spread collider
         //**************************************************************************************************************
         {
+            if (other.gameObject.GetComponent<CapsuleCollider>().radius == other.gameObject.GetComponent<InteractiveObject>().closeSpreadRange)
+            {
+                //do a sphere overlap test 
+                
+            }
+
             if (isBurning) //ontriggerenter will only call at the start when it shouldnt spread here
             {
                 bool burning = other.gameObject.GetComponent<InteractiveObject>().isBurning;

@@ -68,15 +68,17 @@ public class MidgroundSpreading : MonoBehaviour
     {
         foreach (GameObject obj in _objFires)
         {
-            if (!objProcessedFires.Contains(obj))
+            if (!objProcessedFires.Contains(obj)) //if our list does not contain object from fetched list
             {
+                //add it to NewFires list
                 objNewFires.Add(obj);
             }
         }
 
         if (objNewFires.Count > 0)
         {
-            ProcessNewFires();
+            //if there's stuff in NewFires list
+            ProcessNewFires(); //process them
         }
     }
 
@@ -84,12 +86,15 @@ public class MidgroundSpreading : MonoBehaviour
     {
         foreach (GameObject obj in objNewFires)
         {
+            //the new tiles that will detect which other tiles to change material
             List<GameObject> sourceTiles = new List<GameObject>();
 
+            //get values for OverlapBox
             Vector3 v3ObjBoxExtents = obj.GetComponent<Collider>().bounds.extents;
             Vector3 v3SearchBoxExtents = new Vector3(v3ObjBoxExtents.x + rangeBurnt3, v3ObjBoxExtents.y, v3ObjBoxExtents.z + rangeBurnt3);
             Vector3 v3SearchBoxOrigin = new Vector3(obj.transform.position.x, obj.transform.position.y - (v3ObjBoxExtents.y / 2.0f), obj.transform.position.z);
             
+            //do an OverlapBox, mainly looking undernearth the fire object
             Collider[] objBoxHitColliders = Physics.OverlapBox(v3SearchBoxOrigin, v3SearchBoxExtents / 2);
 
             for (int i = 0; i < objBoxHitColliders.Length; ++i)
@@ -97,21 +102,24 @@ public class MidgroundSpreading : MonoBehaviour
                 GameObject obj2 = objBoxHitColliders[i].gameObject;
                 if (obj2.CompareTag(midgroundTag))
                 {
+                    //add tile to sourceTiles list
                     List<Tile> currentTiles = tiles;
                     bool exists = false;
-                    foreach (Tile tile in currentTiles.ToArray())
+                    foreach (Tile tile in currentTiles.ToArray()) //use .ToArray() as we want to edit a list
                     {
                         if (!exists)
                         {
-                            if (tile.gameObject == obj2)
+                            if (tile.gameObject == obj2) //if collided object is the same gameObject as a tile in the main list
                             {
                                 exists = true;
                                 if (tile.material != burntMaterial3)
                                 {
                                     if (tile.material == burntMaterial1 || tile.material == burntMaterial2)
                                     {
+                                        //remove existing tile from list if as it's no longer the right type
                                         tiles.Remove(tile);
                                     }
+                                    //add the tile to the main tiles list, and the current sourceTiles list
                                     AddTile(obj2, burntMaterial3, spreadTimeBurnt3, 0.0f);
                                     sourceTiles.Add(obj2);
                                 }
@@ -120,6 +128,7 @@ public class MidgroundSpreading : MonoBehaviour
                     }
                     if (!exists)
                     {
+                        //if it doesnt exist in main tiles list, no need to remove old one from that list
                         AddTile(obj2, burntMaterial3, spreadTimeBurnt3, 0.0f);
                         sourceTiles.Add(obj2);
                     }
@@ -128,10 +137,12 @@ public class MidgroundSpreading : MonoBehaviour
 
             foreach (GameObject objTile in sourceTiles)
             {
+                //get values for OverlapBox 
                 Vector3 v3TileBoxExtents = objTile.GetComponent<Collider>().bounds.extents;
                 Vector3 v3SearchTileExtents = new Vector3(v3TileBoxExtents.x + rangeBurnt2, v3TileBoxExtents.y + rangeBurnt2, v3TileBoxExtents.z + rangeBurnt2);
                 Vector3 v3SearchTileOrigin = objTile.transform.position;
 
+                //do an OverlapBox, mainly looking undernearth the fire object
                 Collider[] objTileHhitColliders = Physics.OverlapBox(v3SearchTileOrigin, v3SearchTileExtents / 2);
 
                 for (int i = 0; i < objTileHhitColliders.Length; ++i)
@@ -144,23 +155,25 @@ public class MidgroundSpreading : MonoBehaviour
                         {
                             if (!exists)
                             {
-                                if (tile.gameObject == objTileHhitColliders[i].gameObject)
+                                if (tile.gameObject == objTileHhitColliders[i].gameObject) //if collided object is the same gameObject as a tile in the main list
                                 {
                                     exists = true;
-                                    if (tile.material != burntMaterial3)
+                                    if (tile.material != burntMaterial3 && tile.material != burntMaterial2)
                                     {
                                         if (tile.material == burntMaterial1)
                                         {
+                                            //remove existing, old tile
                                             tiles.Remove(tile);
                                         }
+                                        //add new tile
                                         AddTile(objTileHhitColliders[i].gameObject, burntMaterial2, spreadTimeBurnt2, 0.0f);
                                     }
-
                                 }
                             }
                         }
                         if (!exists)
                         {
+                            //if it didnt exist in main list, just add it
                             AddTile(objTileHhitColliders[i].gameObject, burntMaterial2, spreadTimeBurnt2, 0.0f);
                         }
                     }
@@ -170,10 +183,12 @@ public class MidgroundSpreading : MonoBehaviour
 
             foreach (GameObject objTile in sourceTiles)
             {
+                //get values for OverlapBox 
                 Vector3 v3TileBoxExtents = objTile.GetComponent<Collider>().bounds.extents;
                 Vector3 v3SearchTileExtents = new Vector3(v3TileBoxExtents.x + rangeBurnt1, v3TileBoxExtents.y + rangeBurnt1, v3TileBoxExtents.z + rangeBurnt1);
                 Vector3 v3SearchTileOrigin = objTile.transform.position;
 
+                //do an OverlapBox, mainly looking undernearth the fire object
                 Collider[] objTileHhitColliders = Physics.OverlapBox(v3SearchTileOrigin, v3SearchTileExtents / 2);
 
                 for (int i = 0; i < objTileHhitColliders.Length; ++i)
@@ -186,18 +201,21 @@ public class MidgroundSpreading : MonoBehaviour
                         {
                             if (!exists)
                             {
-                                if (tile.gameObject == objTileHhitColliders[i].gameObject)
+                                if (tile.gameObject == objTileHhitColliders[i].gameObject) //if collided object is the same gameObject as a tile in the main list
                                 {
                                     exists = true;
-                                    if (tile.material != burntMaterial2 && tile.material != burntMaterial3)
+                                    if (tile.material != burntMaterial3 && tile.material != burntMaterial2 && tile.material != burntMaterial1)
                                     {
+                                        //add new tile
                                         AddTile(objTileHhitColliders[i].gameObject, burntMaterial1, spreadTimeBurnt1, 0.0f);
+                                        //will not currently be hit, but with new materials & states it will be
                                     }
                                 }
                             }
                         }
                         if (!exists)
                         {
+                            //if it didnt exist in main list, just add it
                             AddTile(objTileHhitColliders[i].gameObject, burntMaterial1, spreadTimeBurnt1, 0.0f);
                         }
                     }

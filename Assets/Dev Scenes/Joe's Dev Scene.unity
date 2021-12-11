@@ -64380,6 +64380,40 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1720591557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41af844475abf3b48ad1993d5d52e2ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 1352672343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1720591558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720591557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56613d32f634ea49a08fb0638dce088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireManager: {fileID: 972510675}
+  fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
+  fireSFX_01: {fileID: 5302070063788807168, guid: a8b0517c17b2c3c47a1907c44a1e0d4a,
+    type: 3}
+  fireSFX_02: {fileID: 2947651158333548991, guid: 2324ebc9683db3e45a579bd896a4ce36,
+    type: 3}
+  flammable: 1
+  canSpeadFire: 0
+  isBurning: 0
+  spreadRangeHorizontal: 2
+  timeToSpreadHorizontal: 8
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 4
+  closeSpreading: 0
+  closeSpreadRange: 1
+  timeToCloseSpread: 1.5
 --- !u!43 &1722882697
 Mesh:
   m_ObjectHideFlags: 0
@@ -78351,6 +78385,40 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &2080709026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 57eacf2cbc0441c4d95a3c4d7edfde09,
+    type: 3}
+  m_PrefabInstance: {fileID: 1870641680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2080709027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080709026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56613d32f634ea49a08fb0638dce088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireManager: {fileID: 972510675}
+  fire: {fileID: 7317358254363461131, guid: f68fcd1b1d78108458366c2400622e71, type: 3}
+  fireSFX_01: {fileID: 5302070063788807168, guid: a8b0517c17b2c3c47a1907c44a1e0d4a,
+    type: 3}
+  fireSFX_02: {fileID: 2947651158333548991, guid: 2324ebc9683db3e45a579bd896a4ce36,
+    type: 3}
+  flammable: 1
+  canSpeadFire: 0
+  isBurning: 0
+  spreadRangeHorizontal: 2
+  timeToSpreadHorizontal: 8
+  spreadRangeVertical: 1.5
+  timeToSpreadVertical: 4
+  closeSpreading: 0
+  closeSpreadRange: 1
+  timeToCloseSpread: 1.5
 --- !u!1 &2084743446
 GameObject:
   m_ObjectHideFlags: 0
