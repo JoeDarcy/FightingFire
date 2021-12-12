@@ -18,9 +18,11 @@ public class FireAlarm : MonoBehaviour
 	    {
 			spinRate *= -1.0f;
 		}
-		
 
-	    transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y + spinRate, transform.eulerAngles.z );
 
+	    var transform1 = transform;
+	    var eulerAngles = transform1.eulerAngles;
+	    eulerAngles = new Vector3 (eulerAngles.x, eulerAngles.y + spinRate, eulerAngles.z );
+	    transform1.eulerAngles = eulerAngles;
     }
 }

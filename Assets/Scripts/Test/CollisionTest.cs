@@ -6,12 +6,13 @@ public class CollisionTest : MonoBehaviour
 {
 	[SerializeField] private GameObject parent = null;
 	[SerializeField] private GameObject smokePuff = null;
+	private GameObject smokePuffInstance = null;
 	[SerializeField] private GameObject fireInstance = null;
 	[SerializeField] private GameObject fireSFX_01 = null;
 	[SerializeField] private Material burnt = null;
 	[SerializeField] private int health = 0;
 	
-	private int hitCounter = 0;
+	public int hitCounter = 0;
 	private int hitsTemp = 0;
 
 	private List<ParticleSystem> abc = null;
@@ -28,9 +29,13 @@ public class CollisionTest : MonoBehaviour
 			(parent != null) &&
 			(smokePuff != null))
 	    {
-			Vector3 smokeRotaion = new Vector3(-90.0f, 0.0f, 0.0f);
-			GameObject obj = Instantiate(smokePuff, transform.position, Quaternion.Euler(smokeRotaion));
-			//Destroy(parent); //change to instansiate puff of smoke, dont destroy
+		    if (smokePuffInstance == null)
+		    {
+			    Vector3 smokeRotation = new Vector3(-90.0f, 0.0f, 0.0f);
+			    smokePuffInstance = Instantiate(smokePuff, transform.position, Quaternion.Euler(smokeRotation));
+			}
+			
+			//Destroy(parent); //change to instantiate puff of smoke, don't destroy
 			//call function in interactiveObject to make it not on fire
 			//parent.GetComponent<InteractiveObject>().isBurning = false;
 			//parent.GetComponent<InteractiveObject>().burntOut = false;
@@ -39,6 +44,7 @@ public class CollisionTest : MonoBehaviour
 			parent = null;
 	    }
 
+		/* No longer using particle system for fire
 		if (hitCounter <= health && (parent != null) && hitCounter != hitsTemp)
         {
 			hitsTemp = hitCounter;
@@ -55,6 +61,11 @@ public class CollisionTest : MonoBehaviour
 			fireInstance = null;
 			ps = null;
 		}
+		*/
+
+		// Reduce the size of the fire effect with each hit taken
+		
+
 	}
 
 	private void OnTriggerEnter(Collider other)
