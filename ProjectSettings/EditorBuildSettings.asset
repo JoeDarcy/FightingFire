@@ -8,27 +8,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/00_Intro.unity
     guid: 98f798b0d32361248b277f9ab7f9f141
-  - enabled: 0
-    path: Assets/Scenes/Joe_Darcy_Test.unity
-    guid: 50c7878b10197b647918daa4b52d7a35
   - enabled: 1
     path: Assets/Scenes/01_Menu.unity
     guid: 5e4cb6939f6bc2345a3c53e491fc3a2e
   - enabled: 1
-    path: Assets/Scenes/02_Starting_Level.unity
-    guid: be477809bf3befd459e66ac2ee80c05d
+    path: Assets/Scenes/02_Tutorial.unity
+    guid: 84561f457eabf2342b8f0fbf59580cf4
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/03_Level 1.unity
     guid: b0c13ce068dc51245b58580ae149f1e6
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+    path: Assets/Scenes/04_Level 2.unity
     guid: d5dff18a3d429ad449318acf67180ea4
   - enabled: 1
-    path: Assets/Scenes/Level 3.unity
+    path: Assets/Scenes/05_Level 3.unity
     guid: d8f48ffdd28b93b429564e5370ba140a
-  - enabled: 0
-    path: Assets/Dev Scenes/Joe's Dev Scene.unity
-    guid: e2892d6eeec80944981774a297028a08
+  - enabled: 1
+    path: Assets/Scenes/06_Congratulations.unity
+    guid: be477809bf3befd459e66ac2ee80c05d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
