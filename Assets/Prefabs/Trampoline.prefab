@@ -53,8 +53,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.4557314, y: 1.7081218, z: 5.4837294}
-  m_Center: {x: -0.06412935, y: 0.3540609, z: -0.12580967}
+  m_Size: {x: 3.8812394, y: 1.3845596, z: 4.299758}
+  m_Center: {x: -0.02944398, y: 0.19227982, z: -0.10815239}
 --- !u!114 &817259715569911524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4692311e3a84bd41ad2723cce997e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsText: {fileID: 0}
 --- !u!1 &1059149514728404570
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +407,7 @@ GameObject:
   - component: {fileID: 2300983228815884377}
   - component: {fileID: 9071844708808046999}
   - component: {fileID: 3967737941151417185}
+  - component: {fileID: 4525943606080338256}
   m_Layer: 0
   m_Name: Circle001
   m_TagString: Untagged
@@ -477,6 +479,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4525943606080338256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4587904321657772710}
+  m_Material: {fileID: 13400000, guid: 011c5d7c1c85a3343a26c11ec4b802dd, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.1001935, y: 4.1001945, z: 0.2406501}
+  m_Center: {x: 0, y: 7.45353e-16, z: -0.19755039}
 --- !u!1 &5408826422265197446
 GameObject:
   m_ObjectHideFlags: 0

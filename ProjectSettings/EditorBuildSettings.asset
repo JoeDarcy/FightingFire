@@ -5,14 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/00_Intro.unity
+    guid: 98f798b0d32361248b277f9ab7f9f141
   - enabled: 0
     path: Assets/Scenes/Joe_Darcy_Test.unity
     guid: 50c7878b10197b647918daa4b52d7a35
   - enabled: 1
-    path: Assets/Scenes/0_Menu.unity
+    path: Assets/Scenes/01_Menu.unity
     guid: 5e4cb6939f6bc2345a3c53e491fc3a2e
   - enabled: 1
-    path: Assets/Scenes/01_Ed_Probuilder_Test.unity
+    path: Assets/Scenes/02_Starting_Level.unity
     guid: be477809bf3befd459e66ac2ee80c05d
   - enabled: 0
     path: Assets/Dev Scenes/Joe's Dev Scene.unity
