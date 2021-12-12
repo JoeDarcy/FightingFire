@@ -8,9 +8,9 @@ public class FireManager : MonoBehaviour
 
     private List<GameObject> objFires = new List<GameObject>();
 
-    public int totalFires = 0;
-    public int activeFires = 0;
-    public int extinguishedFires = 0;
+    private int totalFires = 0;
+    private int activeFires = 0;
+    private int extinguishedFires = 0;
 
     public void AddFire(GameObject _fireInstance)
     {
@@ -36,5 +36,20 @@ public class FireManager : MonoBehaviour
     {
         activeFires -= 1;
         extinguishedFires += 1;
+    }
+
+    public int GetTotalFires()
+    {
+        return totalFires;
+    }
+
+    public int GetActiveFires()
+    {
+        return activeFires;
+    }
+
+    public int GetExtinguishedFires()
+    {
+        return extinguishedFires;
     }
 }
