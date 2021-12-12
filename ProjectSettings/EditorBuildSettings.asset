@@ -17,6 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/02_Starting_Level.unity
     guid: be477809bf3befd459e66ac2ee80c05d
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: b0c13ce068dc51245b58580ae149f1e6
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: d5dff18a3d429ad449318acf67180ea4
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: d8f48ffdd28b93b429564e5370ba140a
   - enabled: 0
     path: Assets/Dev Scenes/Joe's Dev Scene.unity
     guid: e2892d6eeec80944981774a297028a08

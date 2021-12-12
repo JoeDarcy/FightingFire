@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LiftController : MonoBehaviour
 {
+	[SerializeField] private int sceneToLoad = 0;
+	[SerializeField] private float timerStart = 0.0f;
+	private float timer = 0.0f;
+	
 	[SerializeField] bool levelComplete = false;
 	private bool completeDone = false;
 	private Animator liftAnimator = null;
@@ -11,6 +16,8 @@ public class LiftController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+	    timer = timerStart;
+
         liftAnimator = GetComponent<Animator>();
     }
 
@@ -23,6 +30,17 @@ public class LiftController : MonoBehaviour
 			liftAnimator.SetBool("playerEnterLift", false);
 			liftAnimator.SetBool("playerExitLift", false);
 			completeDone = true;
+		}
+
+		// Transition to the next scene
+		if (completeDone == true && liftAnimator.GetBool("playerEnterLift") == true)
+		{
+			timer -= Time.deltaTime;
+		}
+
+		if (timer <= 0)
+		{
+			SceneManager.LoadScene(sceneToLoad);
 		}
 	}
 
