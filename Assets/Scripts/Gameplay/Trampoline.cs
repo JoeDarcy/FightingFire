@@ -13,7 +13,7 @@ public class Trampoline : MonoBehaviour
 	{
 		Debug.Log("Points: " + points);
 
-		pointsText.text = points.ToString();
+		if (pointsText) pointsText.text = points.ToString();
 	}
 
 	private void OnTriggerEnter(Collider other) 
