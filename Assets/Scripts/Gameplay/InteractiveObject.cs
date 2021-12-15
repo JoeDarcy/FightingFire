@@ -97,7 +97,7 @@ public class InteractiveObject : MonoBehaviour
 		    }
 
 		    fireInstance.transform.parent = gameObject.transform;
-		    fireManager.GetComponent<FireManager>().AddFire(fireInstance);
+		    fireManager.GetComponent<FireManager>().AddFire(gameObject);
 	    }
 
 	    // Control the size of fireInstance as it is hit by player
