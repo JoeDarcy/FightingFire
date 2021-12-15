@@ -173,7 +173,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328291693664959507}
-  - component: {fileID: 1577864316919290877}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -204,19 +203,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1577864316919290877
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811813663257929385}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.4958794, y: 1.1499171, z: 0.4540534}
-  m_Center: {x: 0.009592652, y: 0.5077776, z: -0.019897223}
 --- !u!1 &3028642150588974635
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +449,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &804254504027915250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6947241590002330402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4958794, y: 1.1499171, z: 0.4540534}
+  m_Center: {x: 0.009592652, y: 0.5077776, z: -0.019897223}
 --- !u!1 &7208339962958395838
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,8 +775,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire_Starting
       objectReference: {fileID: 0}
+    - target: {fileID: 7321462368065144510, guid: f46418098d011f04b8246ed789b8a11d,
+        type: 3}
+      propertyPath: closeSpreading
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321462368065144510, guid: f46418098d011f04b8246ed789b8a11d,
+        type: 3}
+      propertyPath: timeToCloseSpread
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f46418098d011f04b8246ed789b8a11d, type: 3}
+--- !u!1 &6947241590002330402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3614190226781599296, guid: f46418098d011f04b8246ed789b8a11d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5927196395418803554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5829937889812631693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 191886943598317039, guid: f46418098d011f04b8246ed789b8a11d,
