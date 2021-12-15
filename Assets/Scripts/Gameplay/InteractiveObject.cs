@@ -51,10 +51,13 @@ public class InteractiveObject : MonoBehaviour
     private float timerClose = 0.0f;
 
     public static int totalFiresInScene = 0;
+    public static bool fireCountStarted = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        fireCountStarted = false;
+
         if (flammable)
         {
             SetupFlammableObject();
@@ -95,6 +98,7 @@ public class InteractiveObject : MonoBehaviour
             // Instantiate fire
 		    fireInstance = Instantiate(fire, transform.position, Quaternion.identity);
 		    totalFiresInScene += 1;
+            fireCountStarted = true;
 
 		    // Instantiate Fire sound effect
 		    if (fireSFX_01 != null)

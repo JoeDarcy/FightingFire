@@ -12,7 +12,7 @@ public class FireAlarm : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-	    if (InteractiveObject.totalFiresInScene <= 0)
+	    if (InteractiveObject.totalFiresInScene <= 0 && InteractiveObject.fireCountStarted == true)
 	    {
 			// Turn off the fire alarm lights when the fires go out
 			light_1.SetActive(false);
