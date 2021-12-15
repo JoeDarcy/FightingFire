@@ -70,7 +70,7 @@ public class CollisionTest : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Axe"))
+		if (other.CompareTag("Axe") || other.CompareTag("Rocket_Launcher") || other.CompareTag("Flame_Thrower") || other.CompareTag("Fire_Extinguisher"))
         {
 			Debug.Log("Hit!");
 			hitCounter += 1;
