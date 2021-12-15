@@ -10,6 +10,10 @@ TagManager:
   - Axe
   - Old_Woman
   - Baby
+  - Midground
+  - Flame_Thrower
+  - Rocket_Launcher
+  - Fire_Extinguisher
   layers:
   - Default
   - TransparentFX

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] private GameObject explosion = null;
+	[SerializeField] private GameObject smoke = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void OnTriggerEnter(Collider other)
+	{
+		// Instantiate explosion and smoke
+		Instantiate(explosion, transform.position, Quaternion.identity);
+		Instantiate(smoke, transform.position, Quaternion.identity);
+		// Destroy self on collision
+		Destroy(gameObject);
+	}
 }
