@@ -9951,7 +9951,7 @@ GameObject:
   - component: {fileID: 1728246707104744148}
   m_Layer: 9
   m_Name: VR_Rig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

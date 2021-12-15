@@ -25,7 +25,8 @@ public class CollisionTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    if ((hitCounter >= health) &&
+	    // Instantiate smoke puff when fire goes out
+		if ((hitCounter >= health) &&
 			(parent != null) &&
 			(smokePuff != null))
 	    {
@@ -34,36 +35,12 @@ public class CollisionTest : MonoBehaviour
 			    Vector3 smokeRotation = new Vector3(-90.0f, 0.0f, 0.0f);
 			    smokePuffInstance = Instantiate(smokePuff, transform.position, Quaternion.Euler(smokeRotation));
 			}
-			
-			//Destroy(parent); //change to instantiate puff of smoke, don't destroy
-			//call function in interactiveObject to make it not on fire
-			//parent.GetComponent<InteractiveObject>().isBurning = false;
-			//parent.GetComponent<InteractiveObject>().burntOut = false;
-
+		    
+			// Change material to burnt when fire goes out
 			parent.GetComponent<Renderer>().material = burnt;
 			parent = null;
 	    }
 
-		/* No longer using particle system for fire
-		if (hitCounter <= health && (parent != null) && hitCounter != hitsTemp)
-        {
-			hitsTemp = hitCounter;
-
-			fireInstance = gameObject.transform.parent.gameObject.GetComponentInChildren<InteractiveObject>().gameObject;
-
-			ParticleSystem[] ps = fireInstance.GetComponentsInChildren<ParticleSystem>();
-
-			for (int i = 0; i < ps.Length; ++i)
-            {
-				ps[i].gameObject.transform.localScale = ps[i].gameObject.transform.localScale * 0.8f;
-			}
-
-			fireInstance = null;
-			ps = null;
-		}
-		*/
-
-		// Reduce the size of the fire effect with each hit taken
 		
 
 	}
