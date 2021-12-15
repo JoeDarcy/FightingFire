@@ -14,6 +14,8 @@ TagManager:
   - Flame_Thrower
   - Rocket_Launcher
   - Fire_Extinguisher
+  - Fire
+  - Wall
   layers:
   - Default
   - TransparentFX

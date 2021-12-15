@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8133642606950312368}
   m_Layer: 0
   m_Name: Hit_Box
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,3 +65,4 @@ MonoBehaviour:
     type: 3}
   burnt: {fileID: 2100000, guid: 7595de232385ee444bac38d8cd85f106, type: 2}
   health: 10
+  hitCounter: 0

@@ -87,6 +87,7 @@ public class InteractiveObject : MonoBehaviour
 	    {
 		    doOnce = false;
 
+            // Instantiate fire
 		    fireInstance = Instantiate(fire, transform.position, Quaternion.identity);
 
 		    // Instantiate Fire sound effect

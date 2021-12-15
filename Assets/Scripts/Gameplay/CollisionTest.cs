@@ -40,10 +40,7 @@ public class CollisionTest : MonoBehaviour
 			parent.GetComponent<Renderer>().material = burnt;
 			parent = null;
 	    }
-
-		
-
-	}
+    }
 
 	private void OnTriggerEnter(Collider other)
 	{

@@ -9,10 +9,13 @@ public class Rocket : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		// Instantiate explosion and smoke
-		Instantiate(explosion, transform.position, Quaternion.identity);
-		Instantiate(smoke, transform.position, Quaternion.identity);
-		// Destroy self on collision
-		Destroy(gameObject);
+		if (other.CompareTag("Fire") || other.CompareTag("Wall"))
+		{
+			// Instantiate explosion and smoke
+			Instantiate(explosion, transform.position, Quaternion.identity);
+			Instantiate(smoke, transform.position, Quaternion.identity);
+			// Destroy self on collision
+			Destroy(gameObject);
+		}
 	}
 }

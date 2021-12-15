@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5744145431204477201}
   - component: {fileID: 5744145431204477198}
   - component: {fileID: 5744145431204477199}
+  - component: {fileID: 3592594533630437575}
   m_Layer: 0
   m_Name: Rocket_Burst
   m_TagString: Untagged
@@ -4864,3 +4865,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3592594533630437575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5744145431204477196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f8df9835f254a4d89f343fe5fcaa19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerStart: 2
