@@ -264,6 +264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinRate: 7
+  light_1: {fileID: 7905336190484436654}
+  light_2: {fileID: 7905336191651394772}
+  fireAlarmSound: {fileID: 0}
 --- !u!1001 &7905336192048740801
 PrefabInstance:
   m_ObjectHideFlags: 0

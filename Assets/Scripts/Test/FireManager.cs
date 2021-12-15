@@ -12,7 +12,13 @@ public class FireManager : MonoBehaviour
     private int activeFires = 0;
     private int extinguishedFires = 0;
 
-    public void AddFire(GameObject _fireInstance)
+	private void Update()
+	{
+		//Debug.Log("Active fires: " + activeFires);
+		//Debug.Log("Total fires: " + totalFires);
+    }
+
+	public void AddFire(GameObject _fireInstance)
     {
         objFires.Add(_fireInstance);
         totalFires += 1;

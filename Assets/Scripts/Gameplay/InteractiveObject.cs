@@ -50,9 +50,14 @@ public class InteractiveObject : MonoBehaviour
     private float timerVertical = 0.0f;
     private float timerClose = 0.0f;
 
+    public static int totalFiresInScene = 0;
+    public static bool fireCountStarted = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        fireCountStarted = false;
+
         if (flammable)
         {
             SetupFlammableObject();
@@ -62,7 +67,10 @@ public class InteractiveObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    if (isBurning && canSpeadFire)
+        // Output total fire count
+        Debug.Log("Active fires: " + totalFiresInScene);
+
+        if (isBurning && canSpeadFire)
 	    {
 		    timerHorizontal += Time.deltaTime;
 		    timerVertical += Time.deltaTime;
@@ -89,6 +97,8 @@ public class InteractiveObject : MonoBehaviour
 
             // Instantiate fire
 		    fireInstance = Instantiate(fire, transform.position, Quaternion.identity);
+		    totalFiresInScene += 1;
+            fireCountStarted = true;
 
 		    // Instantiate Fire sound effect
 		    if (fireSFX_01 != null)
@@ -126,8 +136,18 @@ public class InteractiveObject : MonoBehaviour
 		    // Destroy fire VFX when fire is dead (set size to 0)
 		    if (GetComponentInChildren<CollisionTest>().hitCounter >= hitMax)
 		    {
-			    // Set the size of the flames in the VFX graph
-			    fireVFX.SetFloat("Flame_Size", 0.0f);
+                // Decrement totalFiresInScene
+                if (fireVFX.GetFloat("Flame_Size") > 0.0f)
+                {
+	                totalFiresInScene -= 1;
+                }
+
+                // Turn off the fire sound effect
+                fireSFX_01.SetActive(false);
+                fireSFX_02.SetActive(false);
+
+                // Set the size of the flames in the VFX graph
+                fireVFX.SetFloat("Flame_Size", 0.0f);
 			    // Set the size of the embers in the VFX graph
 			    fireVFX.SetFloat("Ember_Size", 0.0f);
 			    // Set the size of the smoke in the VFX graph
