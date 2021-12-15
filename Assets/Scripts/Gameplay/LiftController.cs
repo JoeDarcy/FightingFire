@@ -23,6 +23,12 @@ public class LiftController : MonoBehaviour
 
 	private void Update() 
 	{
+		// Trigger end of level once all fires are put out
+		if (InteractiveObject.totalFiresInScene <= 0)
+		{
+			levelComplete = true;
+		}
+
 		// If the level is complete open the lift doors again
 		if (levelComplete == true && completeDone == false)
 		{
