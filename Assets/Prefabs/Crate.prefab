@@ -700,6 +700,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7321462368065144510, guid: f46418098d011f04b8246ed789b8a11d,
         type: 3}
+      propertyPath: isBurning
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321462368065144510, guid: f46418098d011f04b8246ed789b8a11d,
+        type: 3}
       propertyPath: closeSpreading
       value: 0
       objectReference: {fileID: 0}

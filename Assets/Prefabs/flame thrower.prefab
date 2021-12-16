@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7875956220418894257}
   - component: {fileID: 2657571396763029690}
   - component: {fileID: 6862166049710020684}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: flame thrower
   m_TagString: Flame_Thrower
   m_Icon: {fileID: 0}

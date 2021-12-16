@@ -97,8 +97,13 @@ public class InteractiveObject : MonoBehaviour
 
             // Instantiate fire
 		    fireInstance = Instantiate(fire, transform.position, Quaternion.identity);
-		    totalFiresInScene += 1;
-            fireCountStarted = true;
+
+            // Only count the fire you can see with normal vision
+		    if (gameObject.transform.parent.CompareTag("Normal_Vision"))
+		    {
+			    totalFiresInScene += 1;
+			    fireCountStarted = true;
+            }
 
 		    // Instantiate Fire sound effect
 		    if (fireSFX_01 != null)
@@ -137,7 +142,7 @@ public class InteractiveObject : MonoBehaviour
 		    if (GetComponentInChildren<CollisionTest>().hitCounter >= hitMax)
 		    {
                 // Decrement totalFiresInScene
-                if (fireVFX.GetFloat("Flame_Size") > 0.0f)
+                if (fireVFX.GetFloat("Flame_Size") > 0.0f && gameObject.transform.parent.CompareTag("Normal_Vision"))
                 {
 	                totalFiresInScene -= 1;
                 }
