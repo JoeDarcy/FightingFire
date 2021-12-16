@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 92645110508266560}
   - component: {fileID: 92645110508266589}
   - component: {fileID: 92645110508266591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Granny
   m_TagString: Old_Woman
   m_Icon: {fileID: 0}

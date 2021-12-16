@@ -52,7 +52,7 @@ MonoBehaviour:
     type: 3}
   flammable: 1
   canSpeadFire: 1
-  isBurning: 0
+  isBurning: 1
   spreadRangeHorizontal: 2
   timeToSpreadHorizontal: 2
   spreadRangeVertical: 1.5

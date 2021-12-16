@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 3225321815928258965}
   - component: {fileID: 4764986942985771244}
   - component: {fileID: 8616720775413660102}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireExtinguisher
   m_TagString: Fire_Extinguisher
   m_Icon: {fileID: 0}
