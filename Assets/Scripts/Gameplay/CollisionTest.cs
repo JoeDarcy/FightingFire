@@ -7,6 +7,7 @@ public class CollisionTest : MonoBehaviour
 	[SerializeField] private GameObject parent = null;
 	[SerializeField] private GameObject smokePuff = null;
 	private GameObject smokePuffInstance = null;
+	[SerializeField] private GameObject chopSound = null;
 	[SerializeField] private GameObject fireInstance = null;
 	[SerializeField] private GameObject fireSFX_01 = null;
 	[SerializeField] private Material burnt = null;
@@ -49,7 +50,8 @@ public class CollisionTest : MonoBehaviour
 			Debug.Log("Hit!");
 			hitCounter += 1;
 			Debug.Log("Box HP: " + hitCounter);
-		}
+			Instantiate(chopSound, transform.position, Quaternion.identity);
+        }
 		
 	}
 }

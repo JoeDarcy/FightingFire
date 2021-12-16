@@ -60,6 +60,8 @@ MonoBehaviour:
   parent: {fileID: 0}
   smokePuff: {fileID: 5287471714799610627, guid: 9ba8a7f2613c784409b379b9cac6fe8e,
     type: 3}
+  chopSound: {fileID: 1083742655855429332, guid: bc931c410beb5084bbcf53324832b8f4,
+    type: 3}
   fireInstance: {fileID: 0}
   fireSFX_01: {fileID: 5302070063788807168, guid: a8b0517c17b2c3c47a1907c44a1e0d4a,
     type: 3}
