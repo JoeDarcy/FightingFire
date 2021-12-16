@@ -9,13 +9,19 @@ public class Music_Controller : MonoBehaviour
 
 	private void OnTriggerExit(Collider other) 
 	{
-		liftMusic.SetActive(false);
-		themeMusic.SetActive(true);
+		if (other.CompareTag("Player"))
+		{
+			liftMusic.SetActive(false);
+			themeMusic.SetActive(true);
+		}
 	}
 
 	private void OnTriggerEnter(Collider other) 
 	{
-		liftMusic.SetActive(true);
-		themeMusic.SetActive(false);
+		if (other.CompareTag("Player"))
+		{
+			liftMusic.SetActive(true);
+			themeMusic.SetActive(false);
+		}
 	}
 }
