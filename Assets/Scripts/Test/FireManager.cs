@@ -14,8 +14,8 @@ public class FireManager : MonoBehaviour
 
 	private void Update()
 	{
-		//Debug.Log("Active fires: " + activeFires);
-		//Debug.Log("Total fires: " + totalFires);
+		Debug.Log("Active fires: " + activeFires);
+		Debug.Log("Total fires: " + totalFires);
     }
 
 	public void AddFire(GameObject _fireInstance)

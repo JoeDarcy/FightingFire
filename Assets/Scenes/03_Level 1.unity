@@ -21306,6 +21306,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8857803897407354054, guid: edc27e1f41ef62940bc8a637f8205a42,
+        type: 3}
+      propertyPath: flammable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857803897407354054, guid: edc27e1f41ef62940bc8a637f8205a42,
+        type: 3}
+      propertyPath: isBurning
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857803897407354054, guid: edc27e1f41ef62940bc8a637f8205a42,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8933913739680940973, guid: edc27e1f41ef62940bc8a637f8205a42,
         type: 3}
       propertyPath: m_Name
@@ -51842,6 +51857,75 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1001 &982461117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5654202428332141249, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_Name
+      value: Lift_Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654202428332141251, guid: ac77356d9a4746540ab76d6080c216ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac77356d9a4746540ab76d6080c216ac, type: 3}
 --- !u!43 &986930493
 Mesh:
   m_ObjectHideFlags: 0
@@ -52747,6 +52831,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Normal_Vision
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024721135106005980, guid: 263f3dd4a8f1b934a89015b4f3c476a5,
+        type: 3}
+      propertyPath: flammable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024721135106005980, guid: 263f3dd4a8f1b934a89015b4f3c476a5,
+        type: 3}
+      propertyPath: isBurning
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024721135106005980, guid: 263f3dd4a8f1b934a89015b4f3c476a5,
+        type: 3}
+      propertyPath: canSpeadFire
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 263f3dd4a8f1b934a89015b4f3c476a5, type: 3}
@@ -67914,6 +68013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Weapon_Unlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909272302436579252, guid: 34eb00cba2e9b8d46952d39077d413ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34eb00cba2e9b8d46952d39077d413ad, type: 3}

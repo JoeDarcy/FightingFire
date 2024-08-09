@@ -12,6 +12,10 @@ public class InteractiveObject : MonoBehaviour
     [SerializeField] private GameObject fire = null;
     private GameObject fireInstance = null;
     VisualEffect fireVFX = null;
+    private GameObject fireBasic =  null;
+    private GameObject smoke = null;
+    private GameObject cloud = null; 
+    private Vector3 shrinkAmount = new Vector3(0.1f, 0.1f, 0.1f);
     // Temporary hits taken variable
     private int hitTemp = 0;
     // Maximum hits the fire can take
@@ -131,9 +135,22 @@ public class InteractiveObject : MonoBehaviour
 		    if (GetComponentInChildren<CollisionTest>().hitCounter > hitTemp &&
 		        GetComponentInChildren<CollisionTest>().hitCounter < hitMax)
 		    {
-			    // Set the size of the flames in the VFX graph
-			    fireVFX.SetFloat("Flame_Size", fireVFX.GetFloat("Flame_Size") - 0.2f);
-		    }
+                // Set the size of the flames in the VFX graph
+                //fireVFX.SetFloat("Flame_Size", fireVFX.GetFloat("Flame_Size") - 0.2f);
+
+                // Shrink basic fire effect
+                //fireInstance.GetComponentInChildren<Transform>().localScale -= new Vector3(0.2f, 0.2f, 0.2f);
+                if (fireBasic == null || smoke == null || cloud == null)
+                {
+	                fireBasic = fireInstance.transform.Find("Fire").gameObject;
+	                smoke = fireInstance.transform.Find("Smoke").gameObject;
+	                cloud = fireInstance.transform.Find("Cloud").gameObject;
+                }
+
+                fireBasic.transform.localScale -= shrinkAmount;
+                smoke.transform.localScale -= shrinkAmount;
+                cloud.transform.localScale -= shrinkAmount;
+            }
 
 		    // Store current hits taken to check against the updated value next time round
 		    hitTemp = GetComponentInChildren<CollisionTest>().hitCounter;
